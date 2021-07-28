@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { HeaderButtons } from "./HeaderButtons";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 const useStyle = makeStyles({
   header: {
@@ -28,6 +29,8 @@ const useStyle = makeStyles({
   component: {
     marginLeft: "12%",
     lineHeight: 0,
+    textDecoration: "none",
+    color: "#fff",
   },
   subHeading: {
     fontSize: 10,
@@ -51,18 +54,18 @@ const Header = () => {
   return (
     <AppBar className={classes.header}>
       <ToolBar>
-        <Box className={classes.component}>
+        <Link to="/" className={classes.component}>
           <img src={logoURL} alt="logo" className={classes.logo} />
           <Box className={classes.container}>
             <Typography className={classes.subHeading}>
-              Explore{" "}
+              Explore
               <Box component="span" style={{ color: "#FFE500" }}>
                 Plus
               </Box>
             </Typography>
             <img src={subURL} alt="" className={classes.subURL} />
           </Box>
-        </Box>
+        </Link>
 
         <SearchBar />
         <HeaderButtons />
