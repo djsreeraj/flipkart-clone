@@ -2,9 +2,11 @@ import {
   AppBar,
   Toolbar,
   makeStyles,
+  withStyles,
   Typography,
   Box,
 } from "@material-ui/core";
+import { HeaderButtons } from "./HeaderButtons";
 import SearchBar from "./SearchBar";
 
 const useStyle = makeStyles({
@@ -33,6 +35,12 @@ const useStyle = makeStyles({
   },
 });
 
+const ToolBar = withStyles({
+  root: {
+    minHeight: 55,
+  },
+})(Toolbar);
+
 const Header = () => {
   const classes = useStyle();
   const logoURL =
@@ -42,7 +50,7 @@ const Header = () => {
 
   return (
     <AppBar className={classes.header}>
-      <Toolbar>
+      <ToolBar>
         <Box className={classes.component}>
           <img src={logoURL} alt="logo" className={classes.logo} />
           <Box className={classes.container}>
@@ -57,7 +65,8 @@ const Header = () => {
         </Box>
 
         <SearchBar />
-      </Toolbar>
+        <HeaderButtons />
+      </ToolBar>
     </AppBar>
   );
 };

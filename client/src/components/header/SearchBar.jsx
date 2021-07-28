@@ -18,10 +18,10 @@ const myStyles = makeStyles((theme) => ({
     color: "blue",
   },
   inputRoot: {
-    fontSize: "unset",
     width: "100%",
   },
   inputInput: {
+    fontSize: "revert",
     paddingLeft: 20,
   },
 }));
