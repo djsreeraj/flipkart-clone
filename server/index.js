@@ -1,5 +1,6 @@
 import express from "express";
 import connection from "./database/db.js";
+import DefaultData from "./default.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -15,3 +16,7 @@ connection(username, password);
 app.listen(PORT, () =>
   console.log(`Server is successfully running on PORT ${PORT}`)
 );
+
+
+//default data to database
+DefaultData();
