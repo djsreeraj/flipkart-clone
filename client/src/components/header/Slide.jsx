@@ -61,7 +61,7 @@ const responsive = {
       }
   })
 
-export const Slide = () => {
+export const Slide = ({timer, title}) => {
     const classes = useStyle();
     const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
 
@@ -71,10 +71,17 @@ export const Slide = () => {
     return (
         <Box className={classes.component}>
                 <Box className={classes.deal}>
-                    <Typography className={classes.dealText}>Deal of the day </Typography>
-                    <img src={timerURL} style={{ width: 24 }} alt="timer" /> 
-                    <Countdown date={Date.now() + 5.04e+7} renderer={renderer} />
-                    <Button variant="contained" color="primary" className={classes.button}> View All</Button>
+                    <Typography className={classes.dealText}>{title} </Typography>
+                    {
+                        timer && 
+                        <>
+                        <img src={timerURL} style={{ width: 24 }} alt="timer" /> 
+                         <Countdown date={Date.now() + 5.04e+7} renderer={renderer} />
+                        <Button variant="contained" color="primary" className={classes.button}> View All</Button>
+                 
+                        </>
+                    }
+                    
                 </Box>
                 <Divider/>
                 <Carousel

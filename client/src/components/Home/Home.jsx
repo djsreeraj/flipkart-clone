@@ -29,12 +29,16 @@ export const Home = () => {
         <Banner />
         <Box style={{display: 'flex'}}>
             <Box style={{ width: '80%'}}>
-               <Slide />
+               <Slide timer={true} title="Deal of the day" />
             </Box>
             <Box className={classes.rightWrapper}>
               <img src={adURL} alt="ads" style={{ width: 230, height: 'auto'}}/>
             </Box>
         </Box>
+        <Slide timer={false} title="Offers for you"/>
+        <Slide timer={false} title="Suggested items"/>
+        <Slide timer={false} title="Top selections"/>  
+        <Slide timer={false} title="Best Sellers"/>  
       </Box>
     </>
   );
