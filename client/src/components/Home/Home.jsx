@@ -9,17 +9,32 @@ const useStyles = makeStyles({
     padding: 10,
     background: "#F2F2F2",
   },
+  rightWrapper:{
+      background: '#fff',
+      padding: 5,
+      margin: '12px 0 0 10px',
+      width: '17%'
+  }
 });
 
 export const Home = () => {
   const classes = useStyles();
+  const adURL = 'https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70';
+
 
   return (
     <>
       <NavBar />
       <Box className={classes.component}>
         <Banner />
-        <Slide />
+        <Box style={{display: 'flex'}}>
+            <Box style={{ width: '80%'}}>
+               <Slide />
+            </Box>
+            <Box className={classes.rightWrapper}>
+              <img src={adURL} alt="ads" style={{ width: 230, height: 'auto'}}/>
+            </Box>
+        </Box>
       </Box>
     </>
   );

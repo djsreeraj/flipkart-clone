@@ -57,7 +57,7 @@ const responsive = {
           marginTop: 5
       },
       wrapper: {
-          padding: "25px 15px"
+          padding: "35px 15px"
       }
   })
 
